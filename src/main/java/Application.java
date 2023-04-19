@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
         task1();
+        task2();
+
     }
 
     public static void task1() {
@@ -41,6 +43,35 @@ public class Application {
             e.printStackTrace();
         }
 
+
+    }
+
+    public static void task2() {
+        EmployeeDAOImpl employeeDAO = new EmployeeDAOImpl();
+
+// вывел сотрудников
+        employeeDAO.getAllEmployee();
+
+//добавил сотрудника
+        employeeDAO.addEmployee();
+
+// вывел сотрудников
+        employeeDAO.getAllEmployee();
+
+///удалил сотрудника
+        employeeDAO.deleteEmployee(6);
+
+// вывел сотрудников
+        employeeDAO.getAllEmployee();
+
+// вывел сотрудника по id
+        employeeDAO.getEmployeeById(1);
+
+// изменил сотрудника по id
+        employeeDAO.updateEmployee(2);
+
+// вывел сотрудников
+        employeeDAO.getAllEmployee();
 
     }
 }
