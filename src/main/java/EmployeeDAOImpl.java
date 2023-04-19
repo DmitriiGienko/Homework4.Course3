@@ -112,7 +112,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             System.out.printf("Сотрудник с id = %d удален\n");
 
         } catch (SQLException e) {
-            System.out.println("Ошибка при установлении соедениения!");
+            System.out.println(" Ошибка при установлении соедениения!");
             e.printStackTrace();
         }
 
