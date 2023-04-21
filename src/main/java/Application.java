@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-        task1();
+//        task1();
         task2();
 
     }
@@ -16,7 +16,7 @@ public class Application {
         try (final Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement preparedStatement =
                      connection.prepareStatement("SELECT * FROM employee " +
-                             "FULL JOIN city ON employee.city_id = city.city_id")) {
+                             "FULL JOIN city ON employee.city_id = city.city_id ")) {
             System.out.println("Соеденение c БД установлено!");
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("Введите id сотрудника в диапазоне 1-5");
@@ -50,25 +50,25 @@ public class Application {
         EmployeeDAOImpl employeeDAO = new EmployeeDAOImpl();
 
 // вывел сотрудников
-        employeeDAO.getAllEmployee();
+//        employeeDAO.getAllEmployee();
 
 //добавил сотрудника
-        employeeDAO.addEmployee();
+//        employeeDAO.addEmployee();
 
 // вывел сотрудников
-        employeeDAO.getAllEmployee();
+//        employeeDAO.getAllEmployee();
 
 ///удалил сотрудника
-        employeeDAO.deleteEmployee(6);
+//        employeeDAO.deleteEmployee(6);
 
 // вывел сотрудников
-        employeeDAO.getAllEmployee();
+//        employeeDAO.getAllEmployee();
 
 // вывел сотрудника по id
         employeeDAO.getEmployeeById(1);
 
 // изменил сотрудника по id
-        employeeDAO.updateEmployee(2);
+//        employeeDAO.updateEmployee(2);
 
 // вывел сотрудников
         employeeDAO.getAllEmployee();

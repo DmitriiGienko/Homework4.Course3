@@ -9,13 +9,31 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     final String password = "Flyer1983";
     final String url = "jdbc:postgresql://localhost:5432/skypro";
 
+//    @Override
+//    public void addEmployee() {
+//        try (final Connection connection = DriverManager.getConnection(url, user, password);
+//             PreparedStatement preparedStatement =
+//                     connection.prepareStatement("INSERT INTO employee " +
+//                             "(first_name, last_name, gender, age, city_id) " +
+//                             "VALUES ('Petrushka','Petrov', 'male', 24, 3)")) {
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            System.out.println("Сотрудник добавлен");
+//
+//        } catch (SQLException e) {
+//            System.out.println("Ошибка при установлении соедениения!");
+//            e.printStackTrace();
+//        }
+//
+//    }
+
     @Override
-    public void addEmployee() {
+    public void addEmployee(Employee employee) {
+
         try (final Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement preparedStatement =
                      connection.prepareStatement("INSERT INTO employee " +
                              "(first_name, last_name, gender, age, city_id) " +
-                             "VALUES ('Petrushka','Petrov', 'male', 24, 3)")) {
+                             "VALUES ('' +,'Petrov', 'male', 24, 3)")) {
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("Сотрудник добавлен");
 
@@ -31,12 +49,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         try (final Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement preparedStatement =
                      connection.prepareStatement("SELECT * FROM employee " +
-                             "FULL JOIN city ON employee.city_id = city.city_id")) {
+                             "LEFT JOIN city ON employee.city_id = city.city_id " +
+                             "WHERE id=" + id)) {
             System.out.println("Соеденение c БД установлено!");
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                if (id == resultSet.getInt("id")) {
+
                     String nameOfEmployee = resultSet.getString("first_name");
                     String surnameOfEmployee = resultSet.getString("last_name");
                     String genderOfEmployee = (resultSet.getString("gender").equals("male") ? "мужской" : "женский");
@@ -45,7 +64,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
                     System.out.printf("Сотрудник %S %S, пол - %s, возраст - %d, проживает в г.%s",
                             nameOfEmployee, surnameOfEmployee, genderOfEmployee, ageOfEmployee, cityOfEmployee);
-                }
+
             }
         } catch (SQLException e) {
             System.out.println("Ошибка при установлении соедениения!");
@@ -59,7 +78,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         try (final Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement preparedStatement =
                      connection.prepareStatement("SELECT * FROM employee " +
-                             "FULL JOIN city ON employee.city_id = city.city_id")) {
+                             "LEFT JOIN city ON employee.city_id = city.city_id")) {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
