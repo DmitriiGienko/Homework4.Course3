@@ -25,6 +25,34 @@ public class Employee {
         this.cityName = cityName;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
     @Override
     public String toString() {
         return "Соторудник c " +

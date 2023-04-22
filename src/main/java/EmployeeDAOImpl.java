@@ -10,19 +10,18 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
 
     @Override
-    public void addEmployee(String name, String surname, String gender, int age, int cityId) {
-
+    public void addEmployee(Employee employee) {
 
         try (final Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement preparedStatement =
                      connection.prepareStatement("INSERT INTO employee " +
                              "(first_name, last_name, gender, age, city_id) " +
                              "VALUES (?,?,?,?, ?)")) {
-            preparedStatement.setString(1, name);
-            preparedStatement.setString(2, surname);
-            preparedStatement.setString(3, gender);
-            preparedStatement.setInt(4, age);
-            preparedStatement.setInt(5, cityId);
+            preparedStatement.setString(1, employee.getFirstName());
+            preparedStatement.setString(2, employee.getLastName());
+            preparedStatement.setString(3, employee.getGender());
+            preparedStatement.setInt(4, employee.getAge());
+            preparedStatement.setString(5, employee.getCityName());
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("Сотрудник добавлен");
 
