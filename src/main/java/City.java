@@ -1,25 +1,25 @@
 public class City {
-    private String city_name;
-    private int city_id;
+    private String cityName;
+    private int cityId;
 
-    public City(String city_name, int city_id) {
-        this.city_name = city_name;
-        this.city_id = city_id;
+    public City(String cityName, int cityId) {
+        this.cityName = cityName;
+        this.cityId = cityId;
     }
 
-    public String getCity_name() {
-        return city_name;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setCity_name(String city_name) {
-        this.city_name = city_name;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
-    public int getCity_id() {
-        return city_id;
+    public int getCityId() {
+        return cityId;
     }
 
-    public void setCity_id(int city_id) {
-        this.city_id = city_id;
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 }

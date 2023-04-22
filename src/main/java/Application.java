@@ -16,7 +16,7 @@ public class Application {
         try (final Connection connection = DriverManager.getConnection(url, user, password);
              PreparedStatement preparedStatement =
                      connection.prepareStatement("SELECT * FROM employee " +
-                             "FULL JOIN city ON employee.city_id = city.city_id")) {
+                             "FULL JOIN city ON employee.city_id = city.city_id ")) {
             System.out.println("Соеденение c БД установлено!");
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("Введите id сотрудника в диапазоне 1-5");
@@ -50,10 +50,10 @@ public class Application {
         EmployeeDAOImpl employeeDAO = new EmployeeDAOImpl();
 
 // вывел сотрудников
-        employeeDAO.getAllEmployee();
+//        employeeDAO.getAllEmployee();
 
 //добавил сотрудника
-        employeeDAO.addEmployee();
+        employeeDAO.addEmployee("Valentin", "Petrosyan", "male", 19, 3);
 
 // вывел сотрудников
         employeeDAO.getAllEmployee();
@@ -72,6 +72,5 @@ public class Application {
 
 // вывел сотрудников
         employeeDAO.getAllEmployee();
-
     }
 }

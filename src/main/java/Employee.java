@@ -1,30 +1,66 @@
 public class Employee {
 
-    private final int id;
-    private final String first_name;
-    private final String last_name;
+    private int id;
+    private final String firstName;
+    private final String lastName;
     private final String gender;
     private final int age;
-    private final String city_name;
+    private final String cityName;
 
-    public Employee(int id, String first_name, String last_name, String gender, int age, String city_name) {
-        this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public Employee(String first_name, String lastName, String gender, int age, String cityName) {
+
+        this.firstName = first_name;
+        this.lastName = lastName;
         this.gender = gender;
         this.age = age;
-        this.city_name = city_name;
+        this.cityName = cityName;
     }
 
+    public Employee(int id, String firstName, String lastName, String gender, int age, String cityName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.age = age;
+        this.cityName = cityName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
 
     @Override
     public String toString() {
         return "Соторудник c " +
                 "id: " + id +
-                ", имя: " + first_name +
-                ", фамилия: " + last_name +
-                ", пол: " + gender  +
+                ", имя: " + firstName +
+                ", фамилия: " + lastName +
+                ", пол: " + gender +
                 ", возраст: " + age +
-                ", город проживания: " + city_name;
+                ", город проживания: " + cityName;
     }
 }
