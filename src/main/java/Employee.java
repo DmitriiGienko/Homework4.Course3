@@ -29,10 +29,6 @@ public class Employee {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -49,9 +45,6 @@ public class Employee {
         return age;
     }
 
-//    public City getCityName() {
-//        return city;
-//    }
 
     public City getCity() {
         return city;
