@@ -5,24 +5,24 @@ public class Employee {
     private final String lastName;
     private final String gender;
     private final int age;
-    private final String cityName;
+    private final City city;
 
-    public Employee(String first_name, String lastName, String gender, int age, String cityName) {
+    public Employee(String first_name, String lastName, String gender, int age, City city) {
 
         this.firstName = first_name;
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
-        this.cityName = cityName;
+        this.city = city;
     }
 
-    public Employee(int id, String firstName, String lastName, String gender, int age, String cityName) {
+    public Employee(int id, String firstName, String lastName, String gender, int age, City city) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
-        this.cityName = cityName;
+        this.city = city;
     }
 
     public int getId() {
@@ -49,8 +49,8 @@ public class Employee {
         return age;
     }
 
-    public String getCityName() {
-        return cityName;
+    public City getCityName() {
+        return city;
     }
 
     @Override
@@ -61,6 +61,6 @@ public class Employee {
                 ", фамилия: " + lastName +
                 ", пол: " + gender +
                 ", возраст: " + age +
-                ", город проживания: " + cityName;
+                ", город проживания: " + city.getCityName();
     }
 }

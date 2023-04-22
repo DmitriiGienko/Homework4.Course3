@@ -21,7 +21,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             preparedStatement.setString(2, employee.getLastName());
             preparedStatement.setString(3, employee.getGender());
             preparedStatement.setInt(4, employee.getAge());
-            preparedStatement.setString(5, employee.getCityName());
+            preparedStatement.setInt(5, employee.getCityName().getCityId());
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("Сотрудник добавлен");
 
@@ -77,9 +77,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
                 String genderOfEmployee = (resultSet.getString("gender").equals("male") ? "мужской" : "женский");
                 int ageOfEmployee = resultSet.getInt("age");
                 String cityOfEmployee = resultSet.getString("city_name");
+                int idCityOfEmployee = resultSet.getInt("city_id");
 
                 employeeList.add(new Employee(
-                        idOfEmployee, nameOfEmployee, surnameOfEmployee, genderOfEmployee, ageOfEmployee, cityOfEmployee));
+                        idOfEmployee, nameOfEmployee, surnameOfEmployee, genderOfEmployee, ageOfEmployee,
+                        new City(cityOfEmployee, idCityOfEmployee)));
 
             }
         } catch (SQLException e) {
