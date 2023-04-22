@@ -49,9 +49,15 @@ public class Employee {
         return age;
     }
 
-    public City getCityName() {
+//    public City getCityName() {
+//        return city;
+//    }
+
+    public City getCity() {
         return city;
     }
+
+
 
     @Override
     public String toString() {

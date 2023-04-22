@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-        task1();
+//        task1();
         task2();
 
     }
@@ -50,19 +50,19 @@ public class Application {
         EmployeeDAOImpl employeeDAO = new EmployeeDAOImpl();
 
 // вывел сотрудников
-//        employeeDAO.getAllEmployee();
+        employeeDAO.getAllEmployee();
 
 //добавил сотрудника
         employeeDAO.addEmployee(new Employee("Valentin", "Petrosyan",
-                "male", 19, new City("Волгоград", 4)));
+                "male", 19, new City("Санкт-Петербург", 1)));
 // вывел сотрудников
-//        employeeDAO.getAllEmployee();
+        employeeDAO.getAllEmployee();
 
-///удалил сотрудника
+//удалил сотрудника
 //        employeeDAO.deleteEmployee(6);
 
 // вывел сотрудников
-        employeeDAO.getAllEmployee();
+//        employeeDAO.getAllEmployee();
 
 // вывел сотрудника по id
 //        employeeDAO.getEmployeeById(1);

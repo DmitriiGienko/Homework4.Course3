@@ -16,12 +16,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
              PreparedStatement preparedStatement =
                      connection.prepareStatement("INSERT INTO employee " +
                              "(first_name, last_name, gender, age, city_id) " +
-                             "VALUES (?,?,?,?, ?)")) {
+                             "VALUES (?,?,?,?,?)")) {
             preparedStatement.setString(1, employee.getFirstName());
             preparedStatement.setString(2, employee.getLastName());
             preparedStatement.setString(3, employee.getGender());
             preparedStatement.setInt(4, employee.getAge());
-            preparedStatement.setInt(5, employee.getCityName().getCityId());
+            preparedStatement.setInt(5, employee.getCity().getCityId());
             ResultSet resultSet = preparedStatement.executeQuery();
             System.out.println("Сотрудник добавлен");
 
