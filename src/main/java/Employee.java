@@ -7,13 +7,13 @@ public class Employee {
     private final int age;
     private final String cityName;
 
-    public Employee(String first_name, String lastName, String gender, int age, String city_name) {
+    public Employee(String first_name, String lastName, String gender, int age, String cityName) {
 
         this.firstName = first_name;
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
-        this.cityName = city_name;
+        this.cityName = cityName;
     }
 
     public Employee(int id, String firstName, String lastName, String gender, int age, String cityName) {

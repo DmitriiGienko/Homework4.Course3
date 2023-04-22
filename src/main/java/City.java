@@ -2,9 +2,9 @@ public class City {
     private String cityName;
     private int cityId;
 
-    public City(String city_name, int city_id) {
-        this.cityName = city_name;
-        this.cityId = city_id;
+    public City(String cityName, int cityId) {
+        this.cityName = cityName;
+        this.cityId = cityId;
     }
 
     public String getCityName() {

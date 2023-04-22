@@ -3,7 +3,7 @@ import java.util.List;
 public interface EmployeeDAO {
 
     //    Создание (добавление) сущности Employee в таблицу.
-    void addEmployee(Employee employee);
+    void addEmployee(String name, String surname, String gender, int age, int cityId);
 
     //    Получение конкретного объекта Employee по id.
     void getEmployeeById(int id);
