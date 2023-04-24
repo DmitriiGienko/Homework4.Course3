@@ -42,8 +42,6 @@ public class Application {
             System.out.println("Ошибка при установлении соедениения!");
             e.printStackTrace();
         }
-
-
     }
 
     public static void task2() {
