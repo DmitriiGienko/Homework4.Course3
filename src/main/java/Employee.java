@@ -5,9 +5,9 @@ public class Employee {
     private final String lastName;
     private final String gender;
     private final int age;
-    private final City city;
+    private final int city;
 
-    public Employee(String first_name, String lastName, String gender, int age, City city) {
+    public Employee(String first_name, String lastName, String gender, int age, int city) {
 
         this.firstName = first_name;
         this.lastName = lastName;
@@ -16,7 +16,7 @@ public class Employee {
         this.city = city;
     }
 
-    public Employee(int id, String firstName, String lastName, String gender, int age, City city) {
+    public Employee(int id, String firstName, String lastName, String gender, int age, int city) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -46,7 +46,7 @@ public class Employee {
     }
 
 
-    public City getCity() {
+    public int getCity() {
         return city;
     }
 
@@ -60,6 +60,6 @@ public class Employee {
                 ", фамилия: " + lastName +
                 ", пол: " + gender +
                 ", возраст: " + age +
-                ", город проживания: " + city.getCityName();
+                ", город проживания: " + city;
     }
 }
