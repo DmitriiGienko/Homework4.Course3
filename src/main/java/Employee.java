@@ -23,14 +23,14 @@ public class Employee {
     public Employee() {
     }
 
-//    public Employee(String first_name, String lastName, String gender, int age, int city) {
-//
-//        this.firstName = first_name;
-//        this.lastName = lastName;
-//        this.gender = gender;
-//        this.age = age;
-//        this.city = city;
-//    }
+    public Employee(String first_name, String lastName, String gender, int age, int city) {
+
+        this.firstName = first_name;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.age = age;
+        this.city = city;
+    }
 
 //    public Employee(int id, String firstName, String lastName, String gender, int age, int city) {
 //        this.id = id;
@@ -81,7 +81,7 @@ public class Employee {
         this.age = age;
     }
 
-    public int getCity() {
+    public int getCityId() {
         return city;
     }
 
