@@ -32,14 +32,6 @@ public class Employee {
         this.city = city;
     }
 
-//    public Employee(int id, String firstName, String lastName, String gender, int age, int city) {
-//        this.id = id;
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.gender = gender;
-//        this.age = age;
-//        this.city = city;
-//    }
 
     public int getId() {
         return id;

@@ -10,9 +10,8 @@ public interface EmployeeDAO {
     void getAllEmployee();
 
     //    Изменение конкретного объекта Employee в базе по id.
-    void updateEmployee(Employee employee);
+    void updateEmployee(int id, Employee employee);
 
-    //    Удаление конкретного объекта Employee из базы по id.
     void deleteEmployee(Employee employee);
 
 

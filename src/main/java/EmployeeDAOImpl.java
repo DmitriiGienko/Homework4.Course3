@@ -52,19 +52,19 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public void updateEmployee(Employee employee) {
+    public void updateEmployee(int id, Employee employee) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("myPersistenceUnit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
 
-        Employee empForUpdate = entityManager.find(Employee.class, employee.getId());
+        Employee empForUpdate = entityManager.find(Employee.class, id);
+        System.out.printf("Сотрудник %s %s изменен\n", empForUpdate.getFirstName(), empForUpdate.getLastName());
         empForUpdate.setFirstName(employee.getFirstName());
         empForUpdate.setLastName(employee.getLastName());
         empForUpdate.setGender(employee.getGender());
         empForUpdate.setAge(employee.getAge());
         empForUpdate.setCity(employee.getCityId());
         entityManager.merge(empForUpdate);
-
 
         entityManager.getTransaction().commit();
         entityManager.close();
@@ -83,6 +83,5 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         entityManager.close();
         entityManagerFactory.close();
         System.out.printf("Сотрудник %s %s удален\n", employee.getFirstName(), employee.getLastName());
-
     }
 }
