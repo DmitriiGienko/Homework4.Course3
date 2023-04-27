@@ -1,3 +1,5 @@
+import java.util.List;
+
 public interface EmployeeDAO {
 
     //    Создание (добавление) сущности Employee в таблицу.
@@ -7,7 +9,7 @@ public interface EmployeeDAO {
     Employee getEmployeeById(int id);
 
     //    Получение списка всех объектов Employee из базы.
-    void getAllEmployee();
+    List<Employee> getAllEmployee();
 
     //    Изменение конкретного объекта Employee в базе по id.
     void updateEmployee(int id, Employee employee);

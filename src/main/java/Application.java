@@ -5,8 +5,9 @@ public class Application {
         EmployeeDAOImpl employeeDAO = new EmployeeDAOImpl();
 
 // вывел всех сотрудников
-        employeeDAO.getAllEmployee();
-
+        for (Employee employee : employeeDAO.getAllEmployee()) {
+            System.out.println(employee);
+        }
 // вывел всех сотрудника по id
         employeeDAO.getEmployeeById(2);
 
