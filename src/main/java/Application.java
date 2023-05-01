@@ -8,7 +8,7 @@ public class Application {
         for (Employee employee : employeeDAO.getAllEmployee()) {
             System.out.println(employee);
         }
-// вывел всех сотрудника по id
+// вывел  всех сотрудника по id
         employeeDAO.getEmployeeById(2);
 
 // добавил нового сотрудника
