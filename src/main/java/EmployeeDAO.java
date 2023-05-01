@@ -6,16 +6,15 @@ public interface EmployeeDAO {
     void addEmployee(Employee employee);
 
     //    Получение конкретного объекта Employee по id.
-    void getEmployeeById(int id);
+    Employee getEmployeeById(int id);
 
     //    Получение списка всех объектов Employee из базы.
-    void getAllEmployee();
+    List<Employee> getAllEmployee();
 
     //    Изменение конкретного объекта Employee в базе по id.
-    void updateEmployee(int id);
+    void updateEmployee(int id, Employee employee);
 
-    //    Удаление конкретного объекта Employee из базы по id.
-    void deleteEmployee(int id);
+    void deleteEmployee(Employee employee);
 
 
 }
